@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
 import LandingPage from "../components/LandingPage";
-import Components from "../pages/Components";
-import Templates from "../pages/Templates";
+import Components from "../pages/componentsShowcase/Components";
+import Templates from "../pages/templatesShowcase/Templates";
 
 const routes = [
   {
