@@ -1,9 +1,11 @@
-import LandingPage from "./components/LandingPage";
+import { Outlet } from "react-router";
+import Navigation from "./components/layout/Navigation";
 
 function App() {
   return (
     <>
-      <LandingPage />
+      <Navigation />
+      <Outlet />
     </>
   );
 }

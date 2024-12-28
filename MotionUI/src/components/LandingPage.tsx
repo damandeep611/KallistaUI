@@ -1,7 +1,7 @@
 export default function LandingPage() {
   return (
     <section className="h-screen">
-      <div className=" container mt-32 mx-auto max-w-7xl border-2 border-red-500">
+      <div className=" container mt-32 mx-auto max-w-7xl  ">
         <div className="flex flex-col space-y-6 text-center items-center justify-center">
           <div className="flex items-center justify-center space-x-2 border border-gray-500 rounded-full px-4">
             <span>🎈</span>
