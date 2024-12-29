@@ -34,7 +34,7 @@ export default function LandingPage() {
           </div>
         </div>
       </div>
-      <style jsx>{`
+      <style>{`
         .grid-background {
           position: relative;
         }
