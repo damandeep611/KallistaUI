@@ -1,5 +1,5 @@
 import React from "react";
-import { ShowcaseComponent } from "../../components/ShowcaseComponent";
+import { ShowcaseComponent } from "./ShowcaseComponent";
 import { Button } from "./Button";
 import { buttonComponentCode } from "./ButtonComponent";
 

@@ -44,7 +44,7 @@ export default function Sidebar() {
   const toggleSidebar = () => setIsOpen(!isOpen);
   return (
     <>
-      <div className="fixed left-0 top-16 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto">
+      <div className="hidden md:block fixed left-0 top-16 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto">
         <div className="p-4">
           {sidebarItems.map((item) => (
             <div className="mb-6" key={item.title}>

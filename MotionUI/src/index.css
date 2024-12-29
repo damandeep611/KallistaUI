@@ -20,3 +20,35 @@
   scrollbar-width: thin;
   scrollbar-color: #acb3c0 transparent;
 }
+
+
+:root {
+  --grid-color: rgba(0,0,0,1)
+}
+
+.grid-layer {
+  will-change: transform;
+}
+/* smooth fade at the edges  */
+
+.grid-background::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(255,255,255,1), transparent);
+  pointer-events: none;
+}
+
+/* crip grid lines */
+.vertical-crawl,
+.horizontal-crawl {
+  image-rendering: pixelated
+}
+
+.vertical-crawl,
+.horizontal-crawl {
+  filter: drop-shadow(0 0 1px var(--grid-color))
+}

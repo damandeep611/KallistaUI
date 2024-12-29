@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { motion } from "framer-motion";
 
 interface CodeBlockProps {
   code: string;
@@ -20,9 +21,14 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language }) => {
       <SyntaxHighlighter language={language} style={vscDarkPlus}>
         {code}
       </SyntaxHighlighter>
-      <button className="absolute top-2 right-2 px-2 py-1 text-xs bg-blue-600 text-white rounded">
+      <motion.button
+        onClick={copytoClipboard}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="absolute top-2 right-2 px-2 py-1 text-xs bg-blue-600 text-white rounded"
+      >
         {copied ? "Copied" : "Copy"}
-      </button>
+      </motion.button>
     </div>
   );
 };

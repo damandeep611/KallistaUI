@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./Sidebar";
-import ShowcaseLibrary from "./ShowcaseLibrary";
+import { Outlet } from "react-router";
 
 const Components: React.FC = () => {
   return (
@@ -9,8 +9,8 @@ const Components: React.FC = () => {
         <div>
           <Sidebar />
         </div>
-        <div>
-          <ShowcaseLibrary />
+        <div className="md:fixed md:left-64">
+          <Outlet />
         </div>
       </div>
     </section>
