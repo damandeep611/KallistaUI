@@ -13,12 +13,14 @@ const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header>
-      <div className="flex items-center justify-between h-16 px-4 border-b border-gray-700">
+      <div className="flex items-center justify-between h-[54px] pl-4 border-b border-gray-700">
         <div>
-          <Link to="/">Motion.co</Link>
+          <Link to="/" className="text-lg font-bold">
+          Motion.co
+          </Link>
         </div>
         {/* desktop navigation */}
-        <nav className="hidden md:flex text-lg items-center justify-between space-x-4">
+        <nav className="hidden md:flex text-sm font-medium uppercase items-center justify-between space-x-4">
           {navItems.map((item) => (
             <NavLink key={item.label} to={item.href}>
               {item.label}
@@ -26,8 +28,8 @@ const Navigation: React.FC = () => {
           ))}
         </nav>
         <div className="hidden md:flex items-center space-x-2">
-          <button>Docs</button>
-          <button>Github</button>
+          <button className="font-semibold">Sign In</button>
+          <button className="bg-black text-white font-semibold h-[54px] px-8">Get Started</button>
         </div>
         {/* mobile menu */}
         <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
@@ -37,7 +39,7 @@ const Navigation: React.FC = () => {
       {/* open mobile nav */}
       {isOpen && (
         <nav className="fixed inset-0 top-16 z-50 ">
-          <div className="flex flex-col items-center py-8 gap-6  bg-white border-2 border-black  ">
+          <div className="flex flex-col items-center py-8 gap-6 text-sm font-medium  bg-white border-2 border-black  ">
             {navItems.map((item) => (
               <NavLink key={item.label} to={item.href}>
                 {item.label}

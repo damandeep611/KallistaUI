@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
 import LandingPage from "../components/LandingPage";
-import Components from "../pages/componentsShowcase/Components";
+import Components from "../pages/component-library/Components";
 import Templates from "../pages/templatesShowcase/Templates";
-import ShowcaseLibrary from "../pages/componentsShowcase/ShowcaseLibrary";
-import FeatureShowcase from "../pages/Features/FeaturesShowcase";
+import ShowcaseLibrary from "../pages/component-library/ShowcaseLibrary";
+import FeatureShowcase from "../pages/libraryContainer/FeaturesLibrary";
+import HerosLibrary from "../pages/libraryContainer/HerosLibrary";
 
 const routes = [
   {
@@ -18,6 +19,7 @@ const routes = [
         children: [
           { path: "/components", element: <ShowcaseLibrary /> },
           { path: "features", element: <FeatureShowcase /> },
+          {path: "heros", element: <HerosLibrary/>}
         ],
       },
       { path: "/templates", element: <Templates /> },

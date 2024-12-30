@@ -50,7 +50,7 @@ export default function Sidebar() {
       <motion.div
         initial={{ x: -300 }}
         animate={{ x: 0 }}
-        className="hidden md:block fixed left-0 top-16 h-screen w-64 bg-white border-r border-gray-200 overflow-y-auto"
+        className="hidden md:block h-screen left-0 top-16 w-64 bg-white border-r border-gray-200 overflow-y-auto"
       >
         <div className="p-4">
           {sidebarItems.map((item) => (

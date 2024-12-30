@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 interface ComponentCardProps {
   icon: ReactNode;
@@ -32,6 +32,7 @@ const components: ComponentCardProps[] = [
     href: "/components/menus",
     category: "Popular",
   },
+  {icon: "-", title: "Hero Sections", href: "/components/heros", category: "Sections"}
   // { icon: "⟳", title: "TOGGLES", category: "Popular" },
   // { icon: "📦", title: "3D SECTIONS", category: "Sections" },
   // { icon: "❓", title: "FAQ SECTIONS", category: "Sections" },
@@ -56,15 +57,19 @@ const ShowcaseLibrary: React.FC = () => {
   const popularComponents = components.filter((c) => c.category === "Popular");
   const sectionComponents = components.filter((c) => c.category === "Sections");
   return (
-    <div className=" p-12">
-      <div className="space-y-8">
-        <h1 className="text-4xl font-semibold text-gray-800">
-          This is Framer motion and Gsap Motion Components
+    <div className=" p-4 md:p-8">
+      <div className="">
+        <h1 className="mb-4 text-3xl md:text-4xl font-semibold text-gray-800">
+        All Components
+
         </h1>
-        <p className="">
-          Addicting, interactive, animated UI components and templates for
-          React, Tailwind CSS, Framer motion logo Framer Motion & more. Copy &
-          paste them into your code with 2 clicks.
+        <p className="max-w-2xl text-base text-neutral-700 mb-2 ">
+        Components are built with <Link className="text-blue-700" to="https://react.dev/">React</Link>, <Link className="text-blue-700" to="https://tailwindcss.com/">Tailwind CSS</Link> <Link className="text-blue-700" to="https://motion.dev/">Framer Motion</Link> and some combination of Framer Motion, vanilla JS animations, keyframes animations, or another popular, stable JavaScript animation library. We do our best to keep everything up to date with the latest version of each package, but let us know if you run into any problems.
+        </p>
+        <p className="max-w-2xl text-base text-neutral-700 mb-2">
+        Suggest new components for us to build by hitting the  icon anywhere you see it.
+
+
         </p>
       </div>
 

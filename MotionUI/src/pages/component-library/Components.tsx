@@ -1,15 +1,15 @@
 import React from "react";
-import Sidebar from "./Sidebar";
 import { Outlet } from "react-router";
+import Sidebar from "./Sidebar";
 
 const Components: React.FC = () => {
   return (
-    <section>
+    <section className="flex h-screen overflow-hidden">
       <div className="flex ">
         <div>
-          <Sidebar />
+          <Sidebar/>
         </div>
-        <div className="md:fixed md:left-64">
+        <div className=" flex-1 overflow-auto">
           <Outlet />
         </div>
       </div>

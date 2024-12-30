@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useTabs } from "../../hooks/useTabs";
 import { TabButton } from "./TabButton";
 import { RefreshCw } from "lucide-react";
-import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 import { CodeBlock } from "./codeblock/CodeBlock";
 import { AnimatePresence, motion } from "framer-motion";
+import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 
 interface ShowcaseComponentProps {
   title: string;
@@ -13,6 +13,8 @@ interface ShowcaseComponentProps {
   code: string;
   language: string;
   fullWidth?: boolean;
+  height?: string | number;
+  containerStyle?: React.CSSProperties;
 }
 
 export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
@@ -22,6 +24,8 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
   code,
   language,
   fullWidth,
+  height,
+   containerStyle
 }) => {
   const { activeTab, switchTab } = useTabs();
   const [key, setKey] = useState(0);
@@ -31,8 +35,8 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
   };
   return (
     <div
-      className={`bg-white shadow-md rounded-lg overflow-hidden ${
-        fullWidth ? "w-full" : "max-w-4xl"
+      className={`border-2 border-blue-900 m-2 ${
+        fullWidth ? "w-full" : "max-w-7xl"
       }`}
     >
       <div className="p-4 border-b">
@@ -81,6 +85,7 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3 }}
+                  style={{ height:  height || 'auto', overflow: "auto", ...containerStyle}}
                 >
                   {component}
                 </motion.div>
