@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-  width: 4px;
+  scrollbar-width: none;
 }
 
 ::-webkit-scrollbar-track {
@@ -17,7 +17,7 @@
 
 /* Firefox */
 * {
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: #acb3c0 transparent;
 }
 

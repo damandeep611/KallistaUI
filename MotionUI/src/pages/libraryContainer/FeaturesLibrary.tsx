@@ -6,8 +6,10 @@ import { ShowcaseComponent } from "../templatesShowcase/ShowcaseComponent";
 
 export default function FeatureShowcase() {
   return (
-    <section className="">
-      <h1 className="text-3xl font-semibold">Features section components</h1>
+    <section className="py-8">
+      <h1 className="px-4 text-3xl font-semibold">
+        Features section components
+      </h1>
 
       <div className="">
         <div>
