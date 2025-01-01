@@ -6,7 +6,7 @@ import { ShowcaseComponent } from "../templatesShowcase/ShowcaseComponent";
 
 export default function FeatureShowcase() {
   return (
-    <section className="p-12">
+    <section className="">
       <h1 className="text-3xl font-semibold">Features section components</h1>
 
       <div className="">
@@ -20,9 +20,15 @@ export default function FeatureShowcase() {
             language="typescript"
           />
         </div>
-             <div>
-        <ShowcaseComponent title="Bouncy Card Feature" badge="Basic" component={<BouncyCardsFeatures/>} code={buttonComponentCode} language="typescript"/>
-             </div>
+        <div>
+          <ShowcaseComponent
+            title="Bouncy Card Feature"
+            badge="Basic"
+            component={<BouncyCardsFeatures />}
+            code={buttonComponentCode}
+            language="typescript"
+          />
+        </div>
       </div>
     </section>
   );

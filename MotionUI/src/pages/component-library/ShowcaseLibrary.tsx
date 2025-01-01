@@ -5,6 +5,9 @@ import MedalStar from "../../lib/Icons";
 import { componentsTypes } from "./componentTypeData";
 import CategoryCard from "./CategoryCard";
 
+
+
+// this component contains the main content containing library of component categories list 
 const ShowcaseLibrary: React.FC = () => {
   const popularComponents = componentsTypes.filter(
     (c) => c.category === "Popular"

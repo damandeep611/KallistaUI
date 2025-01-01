@@ -36,7 +36,7 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
   return (
     <div
       className={`border-2 border-blue-900 m-2 ${
-        fullWidth ? "w-full" : "max-w-7xl"
+        fullWidth ? "w-full" : "w-full"
       }`}
     >
       <div className="p-4 border-b">
@@ -85,7 +85,11 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3 }}
-                  style={{ height:  height || 'auto', overflow: "auto", ...containerStyle}}
+                  style={{
+                    height: height || "auto",
+                    overflow: "auto",
+                    ...containerStyle,
+                  }}
                 >
                   {component}
                 </motion.div>

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import { motion } from "framer-motion";
 import { ComponentCardProps } from "./componentTypeData";
-
+// this file contains the card styling of Parent catgories of component types i.e hero sections, feature sections etc 
 export default function CategoryCard({
   icon,
   title,

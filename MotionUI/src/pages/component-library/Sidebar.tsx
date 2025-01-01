@@ -57,10 +57,10 @@ export default function Sidebar() {
             <div className="mb-6" key={item.title}>
               <button
                 onClick={() => setActiveItem(item.title)}
-                className={`flex items-center w-full text-left px-4 rounded-lg transition-colors ${
+                className={`flex items-center w-full text-left text-lg px-4 rounded-lg transition-colors ${
                   activeItem === item.title
                     ? "bg-indigo-50 text-indigo-600"
-                    : "text-gray-700 hover:bg-gray-50"
+                    : "text-blue-600 hover:bg-gray-100"
                 }`}
               >
                 {item.icon && <span className="mr-3">{item.icon}</span>}{" "}
@@ -71,10 +71,10 @@ export default function Sidebar() {
                   {item.items.map((subItem) => (
                     <button
                       onClick={() => setActiveItem(subItem)}
-                      className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                      className={`w-full text-left px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
                         activeItem === subItem
                           ? "text-indigo-600 bg-indigo-50"
-                          : "text-gray-600 hover:bg-gray-50"
+                          : "text-neutral-950 hover:bg-neutral-200"
                       }`}
                       key={subItem}
                     >
