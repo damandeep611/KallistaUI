@@ -34,41 +34,56 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
     setKey((prevKey) => prevKey + 1);
   };
   return (
-    <div
-      className={`border-2 border-blue-900 m-2 ${
-        fullWidth ? "w-full" : "w-full"
-      }`}
-    >
+    <div className={` m-2 ${fullWidth ? "w-full" : "w-full"}`}>
       <div className="p-4 border-b">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold">{title}</h2>
-          {badge && (
-            <span className="px-2 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full">
-              {badge}
-            </span>
-          )}
+          <div className="flex flex-wrap items-center gap-2">
+            <h2 className="text-xl font-medium">{title}</h2>
+            {badge && (
+              <span className="flex items-center gap-1 px-1.5 py-0.5 border border-emerald-600 text-xs text-emerald-900 bg-emerald-100">
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <span className="font-medium">{badge}</span>
+              </span>
+            )}
+          </div>
+          <div className="  flex items-center">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="ml-auto mr-4"
+              onClick={reloadComponent}
+            >
+              <RefreshCw className="w-5 h-5 text-gray-600" />
+            </motion.button>
+            <div className=" border-2 border-black flex items-center">
+              <TabButton
+                label="VIEW"
+                isActive={activeTab === "VIEW"}
+                onClick={() => switchTab("VIEW")}
+              />
+              <TabButton
+                label="CODE"
+                isActive={activeTab === "CODE"}
+                onClick={() => switchTab("CODE")}
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="border-b flex items-center">
-        <TabButton
-          label="VIEW"
-          isActive={activeTab === "VIEW"}
-          onClick={() => switchTab("VIEW")}
-        />
-        <TabButton
-          label="CODE"
-          isActive={activeTab === "CODE"}
-          onClick={() => switchTab("CODE")}
-        />
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="ml-auto mr-4"
-          onClick={reloadComponent}
-        >
-          <RefreshCw className="w-5 h-5 text-gray-600" />
-        </motion.button>
-      </div>
+
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab + key}
