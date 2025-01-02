@@ -14,6 +14,7 @@ const sidebarItems: SidebarItem[] = [
     title: "Sections",
     items: [
       "FAQ",
+      "Parallax",
       "Forms",
       "Heros",
       "Features",
