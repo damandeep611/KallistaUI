@@ -72,7 +72,8 @@ export default function LandingPage() {
             <span className="inline-flex items-center justify-center font-medium  border border-gray-300 shadow-sm  h-8 px-3 text-xs rounded-full">
               {" "}
               🎉 <div className="bg-gray-400 w-0.5 mx-2 h-3" /> New ! Globe
-              Animations <ArrowRight className=" mx-2 w-3 h-3" />
+              Animations added
+              <ArrowRight className=" mx-2 w-3 h-3" />
             </span>
             <h1 className="mt-4 text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
               Effortless Motion UI - Built with{" "}
