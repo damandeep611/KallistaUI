@@ -1,7 +1,5 @@
 import { TextPrallaxCode } from "../../data/code-snippets/TextParallaxCode";
-import { BouncyCardsFeatures } from "../../data/component-preview/BouncyCardsFeatures";
 import { TextParallaxContentExample } from "../../data/component-preview/TextParllaxContent";
-import { buttonComponentCode } from "../templatesShowcase/ButtonComponent";
 import { ShowcaseComponent } from "../templatesShowcase/ShowcaseComponent";
 
 export default function FeatureShowcase() {
@@ -19,15 +17,6 @@ export default function FeatureShowcase() {
             component={<TextParallaxContentExample />}
             code={TextPrallaxCode}
             height="100vh"
-            language="typescript"
-          />
-        </div>
-        <div>
-          <ShowcaseComponent
-            title="Bouncy Card Feature"
-            badge="Basic"
-            component={<BouncyCardsFeatures />}
-            code={buttonComponentCode}
             language="typescript"
           />
         </div>

@@ -14,7 +14,6 @@ interface ShowcaseComponentProps {
   language: string;
   fullWidth?: boolean;
   height?: string | number;
-  containerStyle?: React.CSSProperties;
 }
 
 export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
@@ -25,7 +24,6 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
   language,
   fullWidth,
   height,
-   containerStyle
 }) => {
   const { activeTab, switchTab } = useTabs();
   const [key, setKey] = useState(0);
@@ -34,7 +32,7 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
     setKey((prevKey) => prevKey + 1);
   };
   return (
-    <div className={` m-2 ${fullWidth ? "w-full" : "w-full"}`}>
+    <div className={` m-2 max-h-[700px]  ${fullWidth ? "w-full" : "w-full"}`}>
       <div className="p-4 border-b">
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap items-center gap-2">
@@ -87,10 +85,10 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab + key}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.2 }}
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -10 }}
+          transition={{ duration: 0.1 }}
         >
           {activeTab === "VIEW" ? (
             <div className="p-4">
@@ -103,7 +101,6 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
                   style={{
                     height: height || "auto",
                     overflow: "auto",
-                    ...containerStyle,
                   }}
                 >
                   {component}
