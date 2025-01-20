@@ -1,28 +1,28 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useRef } from "react";
-
-const floatingElements = [
-  { id: 1, title: "Card 1", top: "40%", left: "60%" },
-  { id: 2, title: "Card 2", top: "20%", right: "20%" },
-  { id: 3, title: "Card 3", bottom: "30%", left: "70%" },
-  { id: 4, title: "Card 4", top: "30%", right: "10%" },
-];
 
 export default function LandingPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
-
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white to-purple-50">
-      {/* Hero Content */}
-      <div className="container mx-auto px-6 pt-8 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column */}
+    <div className="relative min-h-screen ">
+      <div
+        className="absolute inset-0 hidden aspect-square opacity-25 duration-1000 ease-in-out animate-in fade-in-0 dark:opacity-35 dark:mix-blend-soft-light dark:brightness-90 "
+        style={{
+          backgroundImage: `radial-gradient(at 88% 11%, hsla(166,69%,67%,1) 0px, transparent 50%), 
+             radial-gradient(at 56% 93%, hsla(295,72%,68%,1) 0px, transparent 50%), 
+             radial-gradient(at 87% 28%, hsla(210,89%,62%,1) 0px, transparent 50%), 
+             radial-gradient(at 75% 83%, hsla(332,84%,75%,1) 0px, transparent 50%), 
+             radial-gradient(at 33% 39%, hsla(124,65%,76%,1) 0px, transparent 50%), 
+             radial-gradient(at 62% 69%, hsla(133,75%,79%,1) 0px, transparent 50%), 
+             radial-gradient(at 66% 84%, hsla(89,66%,79%,1) 0px, transparent 50%)`,
+        }}
+      ></div>
+      <div className="container flex items-center justify-center mx-auto px-6 pt-8 pb-20">
+        <div className="max-w-5xl mt-12 ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="text-center flex items-center flex-col"
           >
             <span className="inline-flex items-center justify-center font-medium  border border-gray-300 shadow-sm  h-8 px-3 text-xs rounded-full">
               {" "}
@@ -34,7 +34,7 @@ export default function LandingPage() {
               Effortless Motion UI - Built with{" "}
               <span className="text-blue-800">React and TailwindCss</span>
             </h1>
-            <p className="mt-6 text-lg text-gray-800 leading-relaxed">
+            <p className="mt-6 max-w-2xl text-lg text-gray-800 leading-relaxed">
               Addicting, interactive, animated UI components and templates for{" "}
               <span className="font-semibold space-x-2 ">
                 <svg
@@ -120,64 +120,24 @@ export default function LandingPage() {
               </div>
             </div>
           </motion.div>
-
-          {/* Right Column - Interactive Illustration */}
-          <div
-            ref={containerRef}
-            className="relative h-[600px] hidden lg:block"
-          >
-            {/* Center Circle */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="center-circle absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-purple-600 rounded-full opacity-90"
-            />
-
-            {/* Floating Elements */}
-            {floatingElements.map((element, index) => (
-              <motion.div
-                key={element.id}
-                ref={(el) => (elementsRef.current[index] = el)}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                className="absolute z-10 bg-white p-4 rounded-xl shadow-lg w-40"
-                style={{
-                  top: element.top,
-                  left: element.left,
-                  right: element.right,
-                  bottom: element.bottom,
-                }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full" />
-                  <span className="text-sm font-medium text-gray-700">
-                    {element.title}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-
-            {/* Connecting Lines */}
-            <motion.svg
-              initial={{ y: 0 }}
-              animate={{ y: 1 }}
-              className="absolute inset-0 w-full h-full"
-              style={{ zIndex: 1 }}
-            >
-              <pattern
-                id="grid"
-                width="30"
-                height="30"
-                patternUnits="userSpaceOnUse"
-              >
-                <circle cx="1" cy="1" r="1" className="fill-gray-900" />
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#grid)" />
-            </motion.svg>
-          </div>
         </div>
+        {/* Connecting Lines
+        <motion.svg
+          initial={{ y: 0 }}
+          animate={{ y: 1 }}
+          className="absolute inset-0 w-full h-full"
+          style={{ zIndex: 1 }}
+        >
+          <pattern
+            id="grid"
+            width="30"
+            height="30"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="1" cy="1" r="1" className="fill-gray-900" />
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </motion.svg> */}
       </div>
     </div>
   );
