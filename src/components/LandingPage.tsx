@@ -1,63 +1,18 @@
-import { animated, useSpring } from "@react-spring/web";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-import LicensePlateButton from "./LicensePlate";
+import { useRef } from "react";
 
 const floatingElements = [
-  { id: 1, title: "E-Signature", top: "40%", left: "60%" },
-  { id: 2, title: "Invoices", top: "20%", right: "20%" },
-  { id: 3, title: "E-Forms", bottom: "30%", left: "70%" },
-  { id: 4, title: "E-Receipts", top: "30%", right: "10%" },
+  { id: 1, title: "Card 1", top: "40%", left: "60%" },
+  { id: 2, title: "Card 2", top: "20%", right: "20%" },
+  { id: 3, title: "Card 3", bottom: "30%", left: "70%" },
+  { id: 4, title: "Card 4", top: "30%", right: "10%" },
 ];
 
-interface Point {
-  x: number;
-  y: number;
-}
-
-const AnimatedPath = animated("path");
-
 export default function LandingPage() {
-  const [elementPositions, setElementPositions] = useState<Point[]>([]);
-  const [centralPosition, setCenterPosition] = useState<Point>({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
-    const updatePositions = () => {
-      if (!containerRef.current) return;
-      const centerElement =
-        containerRef.current.querySelector(".center-circle");
-      if (centerElement) {
-        const rect = centerElement.getBoundingClientRect();
-        const containerRect = containerRef.current.getBoundingClientRect();
-        setCenterPosition({
-          x: rect.left - containerRect.left + rect.width / 2,
-          y: rect.top - containerRect.top + rect.height / 2,
-        });
-      }
-      const positions = elementsRef.current.map((element) => {
-        if (!element || !containerRef.current) return { x: 0, y: 0 };
-        const rect = element.getBoundingClientRect();
-        const containerRect = containerRef.current.getBoundingClientRect();
-        return {
-          x: rect.left - containerRect.left + rect.width / 2,
-          y: rect.top - containerRect.top + rect.height / 2,
-        };
-      });
-      setElementPositions(positions);
-    };
-    updatePositions();
-    window.addEventListener("resize", updatePositions);
-    return () => window.removeEventListener("resize", updatePositions);
-  }, []);
-
-  const lineSpring = useSpring({
-    from: { length: 0 },
-    to: { length: 1 },
-    config: { duration: 1500 },
-  });
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-white to-purple-50">
       {/* Hero Content */}
@@ -124,6 +79,7 @@ export default function LandingPage() {
             </p>
 
             <div className="flex mt-8 gap-4">
+              {/* left -view component button */}
               <div className="group relative h-fit w-fit ">
                 <button
                   className="cursor-pointer relative overflow-hidden font-medium  text-base py-2 px-4 bg-indigo-600 text-white  z-10 transition-transform duration-200 group-hover:-translate-x-1 group-hover:-translate-y-1 "
@@ -143,6 +99,7 @@ export default function LandingPage() {
                   className="absolute inset-0 z-0  bg-neutral-950 transition-transform duration-200 group-hover:translate-x-1 group-hover:translate-y-1"
                 ></div>
               </div>
+              {/* right view templates button */}
               <div className="group relative h-fit w-fit">
                 {/* Grid Background */}
                 <div
@@ -150,34 +107,16 @@ export default function LandingPage() {
                   aria-hidden="true"
                 ></div>
 
-                {/* Left Bolt */}
-                <div
-                  className="absolute  top-1/2 left-2 w-3 h-3 bg-red-600 rounded-full border-2 border-gray-400 transform -translate-y-1/2 z-50 shadow-inner"
-                  aria-hidden="true"
-                ></div>
-
                 {/* License Plate Button */}
                 <button
-                  className="relative z-20 text-center cursor-pointer overflow-hidden font-bold text-xl py-4 px-8 bg-gradient-to-b from-yellow-400 to-yellow-500 text-blue-900 uppercase tracking-wide border-4 border-blue-900 shadow-md transition-transform duration-300 group-hover:rotate-2 group-hover:translate-y-1 origin-left"
+                  className="relative z-20 text-center cursor-pointer overflow-hidden font-bold  py-2 px-4 bg-gradient-to-b from-blue-400 to-blue-500 text-blue-900 uppercase tracking-wide border border-blue-900 shadow-md transition-transform duration-300 group-hover:rotate-2 group-hover:translate-y-1 origin-left"
                   style={{
                     clipPath:
                       "polygon(8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, calc(100% - 8px) 100%, 8px 100%, 0 100%, 0 0)",
                   }}
                 >
-                  <div className="text-xs tracking-wider">New York</div>
-                  <div className="text-3xl font-extrabold mt-1">
-                    View Components
-                  </div>
-                  <div className="text-sm tracking-wider mt-1">
-                    Empire State
-                  </div>
+                  View Templates
                 </button>
-
-                {/* Right Bolt */}
-                <div
-                  className="absolute top-1/2 right-2 w-3 h-3 bg-red-600 rounded-full border-2 border-gray-400 transform -translate-y-1/2 z-10 shadow-inner"
-                  aria-hidden="true"
-                ></div>
               </div>
             </div>
           </motion.div>
@@ -187,59 +126,6 @@ export default function LandingPage() {
             ref={containerRef}
             className="relative h-[600px] hidden lg:block"
           >
-            {/* lincense plate  */}
-            <div className="absolute ">
-              <LicensePlateButton />
-            </div>
-            {/* connecting lines svg */}
-            <svg
-              className="absolute inset-0 w-full h-full"
-              style={{ zIndex: 1 }}
-            >
-              <defs>
-                <linearGradient
-                  id="lineGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="0%"
-                >
-                  <stop offset="0%" stopColor="rgba(147, 51, 234, 0.3)" />
-                  <stop offset="100%" stopColor="rgba(147, 51, 234, 0.7)" />
-                </linearGradient>
-              </defs>
-              {/* animated connection lines */}
-              {elementPositions.map((pos, index) => (
-                <AnimatedPath
-                  key={`line-${index}`}
-                  d={`M ${centralPosition.x} ${centralPosition.y} L ${pos.x} ${pos.y}`}
-                  stroke="url(#lineGradient)"
-                  strokeWidth="2"
-                  fill="none"
-                  strokeDasharray={1}
-                  strokeDashoffset={lineSpring.length.to((x) => 1 - x)}
-                />
-              ))}
-              {/* inter element connections  */}
-              {elementPositions.map((pos1, i) =>
-                elementPositions.map((pos2, j) => {
-                  if (i < j) {
-                    return (
-                      <AnimatedPath
-                        key={`connection-${i}-${j}`}
-                        d={`M ${pos1.x} L ${pos2.x} ${pos2.y}`}
-                        stroke="url(#lineGradient)"
-                        strokeWidth="1.5"
-                        fill="none"
-                        strokeDasharray={1}
-                        strokeDashoffset={lineSpring.length.to((x) => 1 - x)}
-                      />
-                    );
-                  }
-                  return null;
-                })
-              )}
-            </svg>
             {/* Center Circle */}
             <motion.div
               initial={{ scale: 0 }}
@@ -274,7 +160,9 @@ export default function LandingPage() {
             ))}
 
             {/* Connecting Lines */}
-            <svg
+            <motion.svg
+              initial={{ y: 0 }}
+              animate={{ y: 1 }}
               className="absolute inset-0 w-full h-full"
               style={{ zIndex: 1 }}
             >
@@ -287,7 +175,7 @@ export default function LandingPage() {
                 <circle cx="1" cy="1" r="1" className="fill-gray-900" />
               </pattern>
               <rect width="100%" height="100%" fill="url(#grid)" />
-            </svg>
+            </motion.svg>
           </div>
         </div>
       </div>

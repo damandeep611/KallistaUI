@@ -6,6 +6,7 @@ import Templates from "../pages/templatesShowcase/Templates";
 import ShowcaseLibrary from "../pages/component-library/ShowcaseLibrary";
 import FeatureShowcase from "../pages/libraryContainer/FeaturesLibrary";
 import HerosLibrary from "../pages/libraryContainer/HerosLibrary";
+import ButtonLibrary from "../pages/libraryContainer/ButtonLibrary";
 
 const routes = [
   {
@@ -19,7 +20,8 @@ const routes = [
         children: [
           { path: "/components", element: <ShowcaseLibrary /> },
           { path: "features", element: <FeatureShowcase /> },
-          {path: "heros", element: <HerosLibrary/>}
+          { path: "heros", element: <HerosLibrary /> },
+          { path: "buttons", element: <ButtonLibrary /> },
         ],
       },
       { path: "/templates", element: <Templates /> },

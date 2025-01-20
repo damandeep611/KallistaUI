@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
 export interface ComponentCardProps {
-  icon: ReactNode;
+  icon?: ReactNode;
   title: string;
-  category: "Popular" | "Sections";
+  category: "Popular" | "Sections" | "Components";
   href?: string;
 }
 
@@ -35,6 +35,11 @@ export const componentsTypes: ComponentCardProps[] = [
     title: "Hero Sections",
     href: "/components/heros",
     category: "Sections",
+  },
+  {
+    title: "Buttons",
+    href: "/components/buttons",
+    category: "Components",
   },
   // { icon: "⟳", title: "TOGGLES", category: "Popular" },
   // { icon: "📦", title: "3D SECTIONS", category: "Sections" },

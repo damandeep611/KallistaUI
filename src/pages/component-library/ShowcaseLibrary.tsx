@@ -15,6 +15,9 @@ const ShowcaseLibrary: React.FC = () => {
   const sectionComponents = componentsTypes.filter(
     (c) => c.category === "Sections"
   );
+  const allComponents = componentsTypes.filter(
+    (c) => c.category === "Components"
+  );
   return (
     <div className=" p-4 md:p-8">
       <div className="">
@@ -55,10 +58,18 @@ const ShowcaseLibrary: React.FC = () => {
           ))}
         </div>
       </section>
-      <section>
+      <section className="my-8">
         <h2 className="text-2xl font-semibold">Sections</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-6">
           {sectionComponents.map((component) => (
+            <CategoryCard key={component.title} {...component} />
+          ))}
+        </div>
+      </section>
+      <section className="my-8 ">
+        <h2 className="text-2xl font-semibold">Components</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-6">
+          {allComponents.map((component) => (
             <CategoryCard key={component.title} {...component} />
           ))}
         </div>

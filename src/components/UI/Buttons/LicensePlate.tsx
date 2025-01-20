@@ -1,7 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
 
-const LicensePlateButton: React.FC = () => {
+export default function LicensePlateButton() {
   return (
     <div className="group relative h-fit w-fit">
       {/* Background Grid */}
@@ -34,7 +33,7 @@ const LicensePlateButton: React.FC = () => {
         }}
       >
         <div className="text-xs tracking-wider">New York</div>
-        <div className="text-3xl font-extrabold mt-1">View Components</div>
+        <div className="text-3xl font-extrabold mt-1">Outer Componenet</div>
         <div className="text-sm tracking-wider mt-1">Empire State</div>
       </motion.button>
 
@@ -45,6 +44,4 @@ const LicensePlateButton: React.FC = () => {
       ></div>
     </div>
   );
-};
-
-export default LicensePlateButton;
+}
