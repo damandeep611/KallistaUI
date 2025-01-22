@@ -5,12 +5,13 @@ export interface ComponentCardProps {
   title: string;
   category: "Popular" | "Sections" | "Components";
   href?: string;
+  backgroundText?: string;
 }
 
 export const componentsTypes: ComponentCardProps[] = [
   {
-    icon: "=",
-    title: "NAVBARS & MENUS",
+    backgroundText: "Navigation Components",
+    title: "NAVBARS",
     href: "/components/navbar",
     category: "Popular",
   },
@@ -19,26 +20,33 @@ export const componentsTypes: ComponentCardProps[] = [
   // { icon: "🎯", title: "HERO SECTIONS", category: "Popular" },
   // { icon: "⟫", title: "CAROUSELS", category: "Popular" },
   {
-    icon: "⚙️",
-    title: "FEATURES SECTIONS",
+    backgroundText: "Feature Sections",
+    title: "FEATURES",
     href: "/components/features",
     category: "Popular",
   },
   {
-    icon: "⋮",
-    title: "DROPDOWN MENUS",
+    backgroundText: "DropDown Menus",
+    title: "MENUS",
     href: "/components/menus",
     category: "Popular",
   },
   {
-    icon: "-",
-    title: "Hero Sections",
+    backgroundText: "Hero Sections",
+    title: "Hero",
     href: "/components/heros",
     category: "Sections",
   },
   {
+    backgroundText: "Buttons",
     title: "Buttons",
     href: "/components/buttons",
+    category: "Components",
+  },
+  {
+    backgroundText: "Cards",
+    title: "Cards",
+    href: "/components/cards",
     category: "Components",
   },
   // { icon: "⟳", title: "TOGGLES", category: "Popular" },
