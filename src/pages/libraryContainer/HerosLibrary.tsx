@@ -1,6 +1,6 @@
 import { HeroGridCode } from "../../data/code-snippets/HeroSections/HeroGridCode";
 import HeroGrid from "../../data/component-preview/HeroSections/HeroGrid";
-import { ShowcaseComponent } from "../templatesShowcase/ShowcaseComponent";
+import { ShowcaseComponent } from "../../docs/ShowcaseComponent";
 
 export default function HerosLibrary() {
   return (

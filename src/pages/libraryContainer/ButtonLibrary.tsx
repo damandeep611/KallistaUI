@@ -1,6 +1,6 @@
 import { licensebuttonCode } from "../../components/UI/Buttons/licensebuttonCode";
 import LicensePlateButton from "../../components/UI/Buttons/LicensePlate";
-import { ShowcaseComponent } from "../templatesShowcase/ShowcaseComponent";
+import { ShowcaseComponent } from "../../docs/ShowcaseComponent";
 
 export default function ButtonLibrary() {
   return (

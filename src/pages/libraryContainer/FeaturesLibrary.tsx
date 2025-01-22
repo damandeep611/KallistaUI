@@ -2,7 +2,7 @@ import { fileCabinetCode } from "../../data/code-snippets/fileCabinet";
 import { TextPrallaxCode } from "../../data/code-snippets/TextParallaxCode";
 import FileCabinet from "../../data/component-preview/FileCabinet";
 import { TextParallaxContentExample } from "../../data/component-preview/TextParllaxContent";
-import { ShowcaseComponent } from "../templatesShowcase/ShowcaseComponent";
+import { ShowcaseComponent } from "../../docs/ShowcaseComponent";
 
 export default function FeatureShowcase() {
   return (

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useTabs } from "../../hooks/useTabs";
+import { useTabs } from "../hooks/useTabs";
 import { TabButton } from "./TabButton";
 import { RefreshCw } from "lucide-react";
-import { CodeBlock } from "./codeblock/CodeBlock";
+import { CodeBlock } from "./CodeBlock";
 import { AnimatePresence, motion } from "framer-motion";
-import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
+import ErrorBoundary from "./ErrorBoundary";
 
 interface ShowcaseComponentProps {
   title: string;

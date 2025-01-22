@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 import { Sparkle } from "lucide-react";
 import MedalStar from "../../lib/Icons";
-import { componentsTypes } from "./componentTypeData";
+import { componentsTypes } from "../../docs/componentTypeData";
 import CategoryCard from "./CategoryCard";
 
 
