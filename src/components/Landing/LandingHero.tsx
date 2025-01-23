@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-export default function LandingPage() {
+export default function LandingHero() {
   return (
     <div className="relative min-h-screen ">
       <div

@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
-import LandingPage from "../components/LandingPage";
+import LandingPage from "../components/Landing/LandingPage";
 import Components from "../pages/component-library/ComponentsPage";
 import Templates from "../pages/TemplatesDocs/Templates";
 import ShowcaseLibrary from "../pages/component-library/ShowcaseLibrary";
