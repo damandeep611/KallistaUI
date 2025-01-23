@@ -1,7 +1,7 @@
+import HoverPop from "../../components/UI/Features/HoverPop/HoverPop";
+import { HoverPopCode } from "../../components/UI/Features/HoverPop/HoverPopCode";
 import { fileCabinetCode } from "../../data/code-snippets/fileCabinet";
-import { TextPrallaxCode } from "../../data/code-snippets/TextParallaxCode";
 import FileCabinet from "../../data/component-preview/FileCabinet";
-import { TextParallaxContentExample } from "../../data/component-preview/TextParllaxContent";
 import { ShowcaseComponent } from "../../docs/ShowcaseComponent";
 
 export default function FeatureShowcase() {
@@ -12,22 +12,22 @@ export default function FeatureShowcase() {
       </h1>
 
       <div className="">
-        <div>
-          <ShowcaseComponent
-            title="Text Parallax Content (scroll)"
-            badge="Basic"
-            component={<TextParallaxContentExample />}
-            code={TextPrallaxCode}
-            height="100vh"
-            language="typescript"
-          />
-        </div>
-        <div className="mt-8">
+        <div className="">
           <ShowcaseComponent
             title="Cabinet Feature File section"
             badge="Basic"
             component={<FileCabinet />}
             code={fileCabinetCode}
+            height="60vh"
+            language="typescript"
+          />
+        </div>
+        <div>
+          <ShowcaseComponent
+            title="Hover Image Reveal"
+            badge="Basic"
+            component={<HoverPop />}
+            code={HoverPopCode}
             height="90vh"
             language="typescript"
           />

@@ -32,8 +32,12 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
     setKey((prevKey) => prevKey + 1);
   };
   return (
-    <div className={` m-2 max-h-[700px]  ${fullWidth ? "w-full" : "w-full"}`}>
-      <div className="p-4 border-b">
+    <div
+      className={` m-2 max-h-[700px] border border-gray-500  ${
+        fullWidth ? "w-full" : "w-full"
+      }`}
+    >
+      <div className="p-4 ">
         <div className="flex items-center justify-between">
           <div className="flex flex-wrap items-center gap-2">
             <h2 className="text-xl font-medium">{title}</h2>
