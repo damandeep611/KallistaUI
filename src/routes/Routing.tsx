@@ -8,6 +8,7 @@ import FeatureShowcase from "../pages/libraryContainer/FeaturesLibrary";
 import HerosLibrary from "../pages/libraryContainer/HerosLibrary";
 import ButtonLibrary from "../pages/libraryContainer/ButtonLibrary";
 import CardsLibrary from "../pages/libraryContainer/CardsLibrary";
+import LocalAiLanding from "../pages/TemplatesDocs/LocalAiLanding/page";
 
 const routes = [
   {
@@ -29,5 +30,6 @@ const routes = [
       { path: "/templates", element: <Templates /> },
     ],
   },
+  { path: "/templates/demo/ailanding", element: <LocalAiLanding /> },
 ];
 export const router = createBrowserRouter(routes);
