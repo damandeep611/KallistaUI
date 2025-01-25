@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import HoverMarquee from "../UI/CardsShowcase/HoverMarqCard/HoverMarq";
+import HeroLines from "./HeroLines";
 
 export default function LandingHero() {
   return (
     <div className="relative min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 ">
+      <HeroLines />
       <div className="container flex items-center justify-center mx-auto px-6 pt-8 pb-20">
         <div className="max-w-5xl mt-12 ">
           <motion.div
@@ -66,7 +69,7 @@ export default function LandingHero() {
               & more. Copy & paste them into your code with 2 clicks
             </p>
 
-            <div className="flex mt-8 gap-4">
+            <div className="flex mt-8 gap-4 md:gap-10 ">
               {/* left -view component button */}
               <div className="group relative h-fit w-fit ">
                 <button
@@ -126,6 +129,10 @@ export default function LandingHero() {
           </pattern>
           <rect width="100%" height="100%" fill="url(#grid)" />
         </motion.svg> */}
+      </div>
+      {/* ------Hover Card */}
+      <div className="absolute top-8 left-4">
+        <HoverMarquee />
       </div>
     </div>
   );
