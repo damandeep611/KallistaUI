@@ -72,10 +72,12 @@ export default function Sidebar() {
       <div className="fixed bottom-4 left-4 right-4 md:hidden z-50">
         <motion.button
           onClick={toggleSidebar}
-          className="w-full bg-white border border-gray-200 rounded-lg shadow-lg p-4 flex justify-between items-center"
+          className="w-full bg-white dark:bg-black text-white border border-gray-200 rounded-lg shadow-lg p-4 flex justify-between items-center"
           whileTap={{ scale: 0.95 }}
         >
-          <span className="font-medium text-gray-700">Menu</span>
+          <span className="font-medium text-gray-700 dark:text-white">
+            Menu
+          </span>
           <motion.span
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.3 }}
@@ -90,7 +92,7 @@ export default function Sidebar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.3 }}
-              className="absolute bottom-full left-0 right-0 mb-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-[60vh] overflow-y-auto  custom-scrollbar"
+              className="absolute bottom-full left-0 right-0 mb-2 bg-white dark:bg-black border border-gray-200  rounded-lg shadow-lg max-h-[60vh] overflow-y-auto  custom-scrollbar"
             >
               <div className="p-4">
                 {sidebarItems.map((item) => (
@@ -103,11 +105,11 @@ export default function Sidebar() {
                       className={`flex items-center w-full text-left px-4 py-2 rounded-lg transition-colors ${
                         activeItem === item.title
                           ? "bg-indigo-50 text-indigo-600"
-                          : "text-gray-700 hover:bg-gray-50"
+                          : "text-indigo-600 hover:bg-gray-50"
                       }`}
                     >
                       {item.icon && <span className="mr-3">{item.icon}</span>}{" "}
-                      <span className="font-medium">{item.title}</span>
+                      <span className="font-medium text-lg">{item.title}</span>
                     </button>
                     {item.items && (
                       <div>
@@ -121,7 +123,7 @@ export default function Sidebar() {
                             className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
                               activeItem === subItem
                                 ? "text-indigo-600 bg-indigo-50"
-                                : "text-gray-600 hover:bg-gray-50"
+                                : "text-gray-600 dark:text-white hover:bg-gray-50"
                             }`}
                           >
                             {subItem}

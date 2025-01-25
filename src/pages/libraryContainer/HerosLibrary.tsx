@@ -13,6 +13,7 @@ export default function HerosLibrary() {
           title="Grid Motion Hero"
           badge="Basic"
           component={<HeroGrid />}
+          height="100vh"
           code={HeroGridCode}
           language="typescript"
         />

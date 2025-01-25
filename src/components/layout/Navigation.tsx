@@ -50,7 +50,7 @@ const Navigation: React.FC = () => {
       {/* open mobile nav */}
       {isOpen && (
         <nav className="fixed inset-0 top-16 z-50 ">
-          <div className="flex flex-col items-center py-8 gap-6 text-sm font-medium  bg-white border-2 border-black  ">
+          <div className="flex flex-col items-center py-8 gap-6 text-sm font-medium  bg-white dark:bg-slate-950 border-2 border-black  ">
             {navItems.map((item) => (
               <NavLink key={item.label} to={item.href}>
                 {item.label}
