@@ -32,6 +32,12 @@ export const componentsTypes: ComponentCardProps[] = [
     category: "Popular",
   },
   {
+    backgroundText: "Animations",
+    title: "Animations",
+    href: "/components/animations",
+    category: "Popular",
+  },
+  {
     backgroundText: "Hero Sections",
     title: "Hero",
     href: "/components/heros",

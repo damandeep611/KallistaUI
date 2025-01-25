@@ -9,6 +9,7 @@ import HerosLibrary from "../pages/libraryContainer/HerosLibrary";
 import ButtonLibrary from "../pages/libraryContainer/ButtonLibrary";
 import CardsLibrary from "../pages/libraryContainer/CardsLibrary";
 import LocalAiLanding from "../pages/TemplatesDocs/LocalAiLanding/page";
+import AnimationLibrary from "../pages/libraryContainer/AnimationLibrary";
 
 const routes = [
   {
@@ -25,6 +26,7 @@ const routes = [
           { path: "heros", element: <HerosLibrary /> },
           { path: "buttons", element: <ButtonLibrary /> },
           { path: "cards", element: <CardsLibrary /> },
+          { path: "animations", element: <AnimationLibrary /> },
         ],
       },
       { path: "/templates", element: <Templates /> },
