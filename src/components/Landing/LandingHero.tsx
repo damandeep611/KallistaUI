@@ -3,19 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function LandingHero() {
   return (
-    <div className="relative min-h-screen ">
-      <div
-        className="absolute inset-0 hidden aspect-square opacity-25 duration-1000 ease-in-out animate-in fade-in-0 dark:opacity-35 dark:mix-blend-soft-light dark:brightness-90 "
-        style={{
-          backgroundImage: `radial-gradient(at 88% 11%, hsla(166,69%,67%,1) 0px, transparent 50%), 
-             radial-gradient(at 56% 93%, hsla(295,72%,68%,1) 0px, transparent 50%), 
-             radial-gradient(at 87% 28%, hsla(210,89%,62%,1) 0px, transparent 50%), 
-             radial-gradient(at 75% 83%, hsla(332,84%,75%,1) 0px, transparent 50%), 
-             radial-gradient(at 33% 39%, hsla(124,65%,76%,1) 0px, transparent 50%), 
-             radial-gradient(at 62% 69%, hsla(133,75%,79%,1) 0px, transparent 50%), 
-             radial-gradient(at 66% 84%, hsla(89,66%,79%,1) 0px, transparent 50%)`,
-        }}
-      ></div>
+    <div className="relative min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-300 ">
       <div className="container flex items-center justify-center mx-auto px-6 pt-8 pb-20">
         <div className="max-w-5xl mt-12 ">
           <motion.div
@@ -30,17 +18,17 @@ export default function LandingHero() {
               Animations added
               <ArrowRight className=" mx-2 w-3 h-3" />
             </span>
-            <h1 className="mt-4 text-5xl md:text-6xl font-extrabold leading-tight text-gray-900">
-              Effortless Motion UI - Built with{" "}
-              <span className="text-blue-800">React and TailwindCss</span>
+            <h1 className="mt-4 text-5xl md:text-6xl font-extrabold leading-tight text-gray-900 dark:text-white">
+              Kallista
+              <span className="text-blue-800 ml-2">UI</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-gray-800 leading-relaxed">
+            <p className="mt-6 max-w-2xl text-lg text-gray-800 dark:text-white leading-relaxed">
               Addicting, interactive, animated UI components and templates for{" "}
               <span className="font-semibold space-x-2 ">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="img"
                   viewBox="0 0 24 24"
                   className="inline  text-[#159ECA] mx-1"
@@ -54,7 +42,7 @@ export default function LandingHero() {
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   role="img"
                   viewBox="0 0 24 24"
                   className="inline text-[#38BDF8] mx-1"
@@ -96,7 +84,7 @@ export default function LandingHero() {
                     clipPath:
                       "polygon(8px 0%, calc(100% - 8px) 0%, 100% 8px, 100% 100%, calc(100% - 8px) 100%, 8px 100%, 0 100%, 0 0)",
                   }}
-                  className="absolute inset-0 z-0  bg-neutral-950 transition-transform duration-200 group-hover:translate-x-1 group-hover:translate-y-1"
+                  className="absolute inset-0 z-0  bg-neutral-950 dark:bg-white transition-transform duration-200 group-hover:translate-x-1 group-hover:translate-y-1"
                 ></div>
               </div>
               {/* right view templates button */}

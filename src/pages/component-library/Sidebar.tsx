@@ -12,31 +12,11 @@ const sidebarItems: SidebarItem[] = [
   { title: "All Components", icon: "⚡" },
   {
     title: "Sections",
-    items: [
-      "FAQ",
-      "Parallax",
-      "Forms",
-      "Heros",
-      "Features",
-      "Pricing",
-      "Sign In",
-      "Stats",
-      "Testimonials",
-      "3D",
-      "Kanban Board",
-    ],
+    items: ["Hero"],
   },
   {
     title: "Components",
-    items: [
-      "Accordions",
-      "Buttons",
-      "Calendars",
-      "Cards",
-      "Carousels",
-      "Countdown",
-      "DropDown Menu",
-    ],
+    items: ["Buttons", "Cards"],
   },
 ];
 
@@ -51,16 +31,16 @@ export default function Sidebar() {
       <motion.div
         initial={{ x: -300 }}
         animate={{ x: 0 }}
-        className="hidden md:block h-screen left-0 top-16 w-64 bg-white border-r border-gray-200 overflow-y-auto"
+        className="hidden md:block h-screen left-0 top-16 w-64 bg-white dark:bg-black dark:text-white border-r border-gray-200 overflow-y-auto"
       >
         <div className="p-4">
           {sidebarItems.map((item) => (
             <div className="mb-6" key={item.title}>
               <button
                 onClick={() => setActiveItem(item.title)}
-                className={`flex items-center w-full text-left text-lg px-4 rounded-lg transition-colors ${
+                className={`flex items-center w-full text-left text-lg  transition-colors ${
                   activeItem === item.title
-                    ? "bg-indigo-50 text-indigo-600"
+                    ? "bg-indigo-50 text-red-600"
                     : "text-blue-600 hover:bg-gray-100"
                 }`}
               >
@@ -75,7 +55,7 @@ export default function Sidebar() {
                       className={`w-full text-left px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
                         activeItem === subItem
                           ? "text-indigo-600 bg-indigo-50"
-                          : "text-neutral-950 hover:bg-neutral-200"
+                          : "text-black dark:text-gray-300 hover:bg-neutral-200"
                       }`}
                       key={subItem}
                     >

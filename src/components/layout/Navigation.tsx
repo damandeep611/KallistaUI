@@ -1,12 +1,14 @@
 import { MenuIcon, X } from "lucide-react";
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
+import DarkModeToggle from "./darkModeToggle";
 
 const navItems = [
   { label: "Components", href: "/components" },
   { label: "Templates", href: "/templates" },
   { label: "Pricing", href: "/pricing" },
   { label: "Generator", href: "/generator" },
+  { label: "Prompts", href: "/prompts" },
 ];
 
 const Navigation: React.FC = () => {
@@ -15,12 +17,18 @@ const Navigation: React.FC = () => {
     <header>
       <div className="flex items-center justify-between h-[54px] pl-4 border-b border-gray-700">
         <div>
-          <Link to="/" className="text-lg font-bold">
-          Motion.co
+          <Link
+            to="/"
+            className="text-lg font-bold dark:text-white transition-colors duration-500"
+          >
+            Motion{" "}
+            <span className="dark:text-blue-600 transition-colors duration-700">
+              .Co
+            </span>
           </Link>
         </div>
         {/* desktop navigation */}
-        <nav className="hidden md:flex text-sm font-medium uppercase items-center justify-between space-x-4">
+        <nav className="hidden md:flex text-sm font-medium uppercase dark:text-white items-center justify-between space-x-4">
           {navItems.map((item) => (
             <NavLink key={item.label} to={item.href}>
               {item.label}
@@ -28,8 +36,11 @@ const Navigation: React.FC = () => {
           ))}
         </nav>
         <div className="hidden md:flex items-center space-x-2">
-          <button className="font-semibold">Sign In</button>
-          <button className="bg-black text-white font-semibold h-[54px] px-8">Get Started</button>
+          <DarkModeToggle />
+          <button className="font-semibold dark:text-white">Sign In</button>
+          <button className="bg-black text-white dark:text-black dark:bg-white font-semibold h-[54px] px-8">
+            Get Started
+          </button>
         </div>
         {/* mobile menu */}
         <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">

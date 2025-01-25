@@ -13,14 +13,14 @@ export default function CategoryCard({
   return (
     <NavLink
       to={href || "#"}
-      className="w-full min-h-24 p-4 relative border-[1px] border-slate-300 overflow-hidden group bg-white hover:shadow-lg transition-shadow duration-300"
+      className="w-full min-h-24 p-4 relative border-[1px] border-slate-300 overflow-hidden group bg-white dark:bg-black hover:shadow-lg transition-shadow duration-300"
     >
       <motion.div
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to bg-indigo-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-        <div className="absolute z-10 top-2 rotate-45 -right-6 text-9xl text-slate-100 group-hover:hidden  duration-300">
+        <div className="absolute z-10 top-6 rotate-30 -right-8 text-8xl text-slate-100 dark:text-slate-900 group-hover:hidden  duration-300">
           {backgroundText}
         </div>
         {/* ------marquee background text */}
@@ -46,7 +46,7 @@ export default function CategoryCard({
           </motion.div>
         </motion.div>
         <div>{icon}</div>
-        <h3 className="text-lg font-medium text-slate-950 group-hover:text-white z-10 relative transition-colors duration-300">
+        <h3 className="text-lg font-medium text-slate-950 dark:text-white group-hover:text-white z-10 relative transition-colors duration-300">
           {title}
         </h3>
       </motion.div>

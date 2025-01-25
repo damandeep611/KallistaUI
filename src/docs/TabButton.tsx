@@ -17,7 +17,7 @@ export const TabButton: React.FC<TabButtonProps> = ({
       className={`px-4 py-2 text-sm font-medium   transition-colors ${
         isActive
           ? "text-white bg-blue-700"
-          : "text-neutral-900  hover:text-blue-600"
+          : "text-neutral-900 dark:text-white  hover:text-blue-600"
       }`}
       onClick={onClick}
       whileHover={{ scale: 1.05 }}
