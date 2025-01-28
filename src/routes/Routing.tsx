@@ -10,6 +10,7 @@ import ButtonLibrary from "../pages/libraryContainer/ButtonLibrary";
 import CardsLibrary from "../pages/libraryContainer/CardsLibrary";
 import LocalAiLanding from "../pages/TemplatesDocs/LocalAiLanding/page";
 import AnimationLibrary from "../pages/libraryContainer/AnimationLibrary";
+import NavigationLibrary from "../pages/libraryContainer/NavigationLibrary";
 
 const routes = [
   {
@@ -27,6 +28,7 @@ const routes = [
           { path: "buttons", element: <ButtonLibrary /> },
           { path: "cards", element: <CardsLibrary /> },
           { path: "animations", element: <AnimationLibrary /> },
+          { path: "navigation", element: <NavigationLibrary /> },
         ],
       },
       { path: "/templates", element: <Templates /> },

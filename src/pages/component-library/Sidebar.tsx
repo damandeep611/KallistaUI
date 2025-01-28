@@ -12,11 +12,24 @@ const sidebarItems: SidebarItem[] = [
   { title: "All Components", icon: "⚡" },
   {
     title: "Sections",
-    items: ["Hero"],
+    items: ["Hero", "Features", "Pricing", "Sign In"],
   },
   {
     title: "Components",
-    items: ["Buttons", "Cards"],
+    items: [
+      "Navbar Menu",
+      "Buttons",
+      "Cards",
+      "Accordions",
+      "Dropdown Menus",
+      "Grids",
+      "Links",
+      "Others",
+    ],
+  },
+  {
+    title: "p5 js",
+    items: ["Cursor Follow"],
   },
 ];
 
@@ -31,7 +44,7 @@ export default function Sidebar() {
       <motion.div
         initial={{ x: -300 }}
         animate={{ x: 0 }}
-        className="hidden md:block h-screen left-0 top-16 w-64 bg-white dark:bg-black dark:text-white border-r border-gray-200 overflow-y-auto"
+        className="hidden md:block h-screen left-0 top-16 w-64 bg-white dark:bg-black dark:text-white  overflow-y-auto"
       >
         <div className="p-4">
           {sidebarItems.map((item) => (

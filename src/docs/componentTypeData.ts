@@ -12,7 +12,7 @@ export const componentsTypes: ComponentCardProps[] = [
   {
     backgroundText: "Navigation Components",
     title: "NAVBARS",
-    href: "/components/navbar",
+    href: "/components/navigation",
     category: "Popular",
   },
   // { icon: "👥", title: "TESTIMONIAL SECTIONS", category: "Popular" },

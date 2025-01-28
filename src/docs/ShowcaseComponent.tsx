@@ -46,10 +46,10 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
                 <svg
                   stroke="currentColor"
                   fill="none"
-                  stroke-width="2"
+                  strokeWidth="2"
                   viewBox="0 0 24 24"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
@@ -87,21 +87,12 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
       </div>
 
       <AnimatePresence mode="wait">
-        <motion.div
-          key={activeTab + key}
-          initial={{ opacity: 0, x: 10 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -10 }}
-          transition={{ duration: 0.1 }}
-        >
+        <motion.div key={activeTab + key}>
           {activeTab === "VIEW" ? (
             <div className="p-4">
               <ErrorBoundary>
                 <motion.div
                   key={key}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
                   style={{
                     height: height || "auto",
                     overflow: "auto",
