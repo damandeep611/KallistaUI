@@ -7,7 +7,7 @@ const navItems = [
   { label: "Components", href: "/components" },
   { label: "Templates", href: "/templates" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Generator", href: "/generator" },
+  { label: "Generator", href: "/testing" },
   { label: "Prompts", href: "/prompts" },
 ];
 

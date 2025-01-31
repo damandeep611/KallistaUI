@@ -11,6 +11,7 @@ import CardsLibrary from "../pages/libraryContainer/CardsLibrary";
 import LocalAiLanding from "../pages/TemplatesDocs/LocalAiLanding/page";
 import AnimationLibrary from "../pages/libraryContainer/AnimationLibrary";
 import NavigationLibrary from "../pages/libraryContainer/NavigationLibrary";
+import TestingPage from "../pages/testing";
 
 const routes = [
   {
@@ -35,5 +36,6 @@ const routes = [
     ],
   },
   { path: "/templates/demo/ailanding", element: <LocalAiLanding /> },
+  { path: "testing", element: <TestingPage /> },
 ];
 export const router = createBrowserRouter(routes);

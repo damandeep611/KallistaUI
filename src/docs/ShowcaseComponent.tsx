@@ -33,7 +33,7 @@ export const ShowcaseComponent: React.FC<ShowcaseComponentProps> = ({
   };
   return (
     <div
-      className={` m-2 max-h-[700px] border border-gray-500  ${
+      className={` m-2 h-auto border border-gray-500  ${
         fullWidth ? "w-full" : "w-full"
       }`}
     >
